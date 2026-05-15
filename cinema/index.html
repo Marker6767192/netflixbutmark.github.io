@@ -4,14 +4,32 @@
   <title>Cinema</title>
   <link rel="stylesheet" href="../style.css">
 </head>
-<body>
+<body style="margin:0; background:black;">
 
-<video controls autoplay width="80%">
+<video id="video" controls autoplay>
   <source src="cinema.mp4" type="video/mp4">
 </video>
 
-<br><br>
-<a href="../index.html">Back</a>
+<script>
+const video = document.getElementById("video");
+
+function goFullscreen() {
+  if (video.requestFullscreen) {
+    video.requestFullscreen();
+  } else if (video.webkitRequestFullscreen) {
+    video.webkitRequestFullscreen();
+  } else if (video.msRequestFullscreen) {
+    video.msRequestFullscreen();
+  }
+}
+
+video.addEventListener("loadedmetadata", () => {
+  video.play();
+  goFullscreen();
+});
+
+video.addEventListener("click", goFullscreen);
+</script>
 
 </body>
 </html>
