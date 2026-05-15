@@ -1,16 +1,28 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Netflix But Mark</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
+body {
+  background: black;
+  color: white;
+  font-family: Arial;
+}
 
-<h1>My Library</h1>
+h1 {
+  text-align: center;
+}
 
-<div id="grid"></div>
+#grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 200px);
+  gap: 10px;
+  padding: 20px;
+}
 
-<script src="app.js"></script>
+.item {
+  background: #222;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  cursor: pointer;
+}
 
-</body>
-</html>
+.item:hover {
+  background: #444;
+}
