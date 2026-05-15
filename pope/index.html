@@ -1,35 +1,45 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Pope</title>
-  <link rel="stylesheet" href="../style.css">
+  <title>Cinema</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      background: black;
+      overflow: hidden;
+    }
+
+    video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+      background: black;
+    }
+
+    a {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      z-index: 10;
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+    }
+  </style>
 </head>
-<body style="margin:0; background:black;">
+<body>
 
-<video id="video" controls autoplay>
-  <source src="pope.mp4" type="video/mp4">
+<a href="../index.html">← Back</a>
+
+<video autoplay controls>
+  <source src="cinema.mp4" type="video/mp4">
 </video>
-
-<script>
-const video = document.getElementById("video");
-
-function goFullscreen() {
-  if (video.requestFullscreen) {
-    video.requestFullscreen();
-  } else if (video.webkitRequestFullscreen) {
-    video.webkitRequestFullscreen();
-  } else if (video.msRequestFullscreen) {
-    video.msRequestFullscreen();
-  }
-}
-
-video.addEventListener("loadedmetadata", () => {
-  video.play();
-  goFullscreen();
-});
-
-video.addEventListener("click", goFullscreen);
-</script>
 
 </body>
 </html>
