@@ -29,17 +29,26 @@
       z-index: 10;
       color: white;
       text-decoration: none;
-      font-size: 18px;
     }
   </style>
 </head>
 <body>
 
-<a href="../index.html">← Back</a>
+<a href="../index.html">Back</a>
 
-<video autoplay controls>
+<video id="vid" autoplay muted playsinline controls>
   <source src="pope.mp4" type="video/mp4">
 </video>
+
+<script>
+const vid = document.getElementById("vid");
+
+vid.play().catch(() => {
+  document.body.addEventListener("click", () => {
+    vid.play();
+  }, { once: true });
+});
+</script>
 
 </body>
 </html>
