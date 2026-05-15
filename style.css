@@ -40,7 +40,8 @@ h1 {
   flex-direction: column;
 }
 
-#player video, #player audio {
+#player video,
+#player audio {
   width: 80%;
   max-height: 80%;
 }
