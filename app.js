@@ -11,9 +11,13 @@ const files = [
 files.forEach(file => {
   const div = document.createElement("div");
   div.className = "item";
-  div.innerText = file;
+  div.innerText = file.replace(/\.[^/.]+$/, "");
 
-  div.onclick = () => openFile(file);
+  div.onclick = () => {
+    const route = "/" + file.replace(/\.[^/.]+$/, "");
+    history.pushState({ file }, "", route);
+    openFile(file);
+  };
 
   grid.appendChild(div);
 });
@@ -38,4 +42,35 @@ function closePlayer() {
   player.style.display = "none";
   video.pause();
   audio.pause();
+
+  history.pushState({}, "", "/");
 }
+
+window.onpopstate = (event) => {
+  const path = window.location.pathname.replace("/", "");
+
+  if (!path) {
+    closePlayer();
+    return;
+  }
+
+  const file = files.find(f =>
+    f.replace(/\.[^/.]+$/, "") === path
+  );
+
+  if (file) {
+    openFile(file);
+  }
+};
+
+window.onload = () => {
+  const path = window.location.pathname.replace("/", "");
+
+  if (path) {
+    const file = files.find(f =>
+      f.replace(/\.[^/.]+$/, "") === path
+    );
+
+    if (file) openFile(file);
+  }
+};
