@@ -42,11 +42,10 @@ function closePlayer() {
   player.style.display = "none";
   video.pause();
   audio.pause();
-
   history.pushState({}, "", "/");
 }
 
-window.onpopstate = (event) => {
+window.onpopstate = () => {
   const path = window.location.pathname.replace("/", "");
 
   if (!path) {
@@ -58,19 +57,15 @@ window.onpopstate = (event) => {
     f.replace(/\.[^/.]+$/, "") === path
   );
 
-  if (file) {
-    openFile(file);
-  }
+  if (file) openFile(file);
 };
 
 window.onload = () => {
   const path = window.location.pathname.replace("/", "");
 
-  if (path) {
-    const file = files.find(f =>
-      f.replace(/\.[^/.]+$/, "") === path
-    );
+  const file = files.find(f =>
+    f.replace(/\.[^/.]+$/, "") === path
+  );
 
-    if (file) openFile(file);
-  }
+  if (file) openFile(file);
 };
