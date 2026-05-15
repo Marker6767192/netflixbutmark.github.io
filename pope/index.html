@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Pope</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body style="margin:0; background:black;">
+
+<video id="video" controls autoplay>
+  <source src="pope.mp4" type="video/mp4">
+</video>
+
+<script>
+const video = document.getElementById("video");
+
+function goFullscreen() {
+  if (video.requestFullscreen) {
+    video.requestFullscreen();
+  } else if (video.webkitRequestFullscreen) {
+    video.webkitRequestFullscreen();
+  } else if (video.msRequestFullscreen) {
+    video.msRequestFullscreen();
+  }
+}
+
+video.addEventListener("loadedmetadata", () => {
+  video.play();
+  goFullscreen();
+});
+
+video.addEventListener("click", goFullscreen);
+</script>
+
+</body>
+</html>
