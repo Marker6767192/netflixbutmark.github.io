@@ -4,6 +4,7 @@ const items = [
   { name: "doors", link: "doors/" },
   { name: "boysepisoderecap", link: "boysepisoderecap/" },
   { name: "wonderlandvrhorror", link: "wonderlandvrhorror/" },
+  { name: "helloneighbor", link: "helloneighbor/" },
   { name: "helloneighbor", link: "helloneighbor/" }
 ];
 
