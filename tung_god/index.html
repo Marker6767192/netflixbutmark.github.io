@@ -2,33 +2,39 @@
 <html>
 <head>
   <title>Tung God</title>
-  <link rel="stylesheet" href="../style.css">
-</head>
-<body style="margin:0; background:black;">
+  <style>
+    html, body {
+      margin: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: black;
+    }
 
-<video id="video" controls autoplay>
+    video {
+      position: fixed;
+      inset: 0;
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+      background: black;
+    }
+  </style>
+</head>
+<body>
+
+<video id="video" autoplay muted playsinline controls>
   <source src="tung_god.mp4" type="video/mp4">
 </video>
 
 <script>
 const video = document.getElementById("video");
 
-function goFullscreen() {
-  if (video.requestFullscreen) {
-    video.requestFullscreen();
-  } else if (video.webkitRequestFullscreen) {
-    video.webkitRequestFullscreen();
-  } else if (video.msRequestFullscreen) {
-    video.msRequestFullscreen();
-  }
-}
-
-video.addEventListener("loadedmetadata", () => {
+document.body.addEventListener("click", () => {
+  video.muted = false;
+  video.volume = 1;
   video.play();
-  goFullscreen();
-});
-
-video.addEventListener("click", goFullscreen);
+}, { once: true });
 </script>
 
 </body>
