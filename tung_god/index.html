@@ -5,6 +5,7 @@
   <style>
     html, body {
       margin: 0;
+      padding: 0;
       width: 100%;
       height: 100%;
       overflow: hidden;
@@ -14,28 +15,30 @@
     video {
       position: fixed;
       inset: 0;
-      width: 100vw;
-      height: 100vh;
-      object-fit: cover;
+      width: 100%;
+      height: 100%;
+      object-fit: fill;
       background: black;
+    }
+
+    a {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      z-index: 10;
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
     }
   </style>
 </head>
 <body>
 
-<video id="video" autoplay muted playsinline controls>
+<a href="../index.html">← Back</a>
+
+<video autoplay controls>
   <source src="tung_god.mp4" type="video/mp4">
 </video>
-
-<script>
-const video = document.getElementById("video");
-
-document.body.addEventListener("click", () => {
-  video.muted = false;
-  video.volume = 1;
-  video.play();
-}, { once: true });
-</script>
 
 </body>
 </html>
