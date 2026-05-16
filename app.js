@@ -1,7 +1,7 @@
 const grid = document.getElementById("grid");
 
 const items = [
-  { name: "doors", link: "doors/" },
+  { name: "doors", link: "doors/" }
 ];
 
 items.forEach(item => {
