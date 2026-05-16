@@ -5,7 +5,7 @@ const items = [
   { name: "boysepisoderecap", link: "boysepisoderecap/" },
   { name: "wonderlandvrhorror", link: "wonderlandvrhorror/" },
   { name: "helloneighbor", link: "helloneighbor/" },
-  { name: "helloneighbor", link: "helloneighbor/" }
+  { name: "rageteachsmartcreate", link: "rageteachsmartcreate/" }
 ];
 
 items.forEach(item => {
