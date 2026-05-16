@@ -9,7 +9,8 @@ const items = [
   { name: "donicrashsun", link: "donicrashsun/" },
   { name: "kryvssup", link: "kryvssup/" },
   { name: "bloxtalechapthree", link: "bloxtalechapthree/" },
-  { name: "delivermail", link: "delivermail/" }
+  { name: "delivermail", link: "delivermail/" },
+  { name: "thebrokenscript", link: "thebrokenscript/" }
 ];
 
 items.forEach(item => {
