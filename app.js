@@ -2,7 +2,9 @@ const grid = document.getElementById("grid");
 
 const items = [
   { name: "doors", link: "doors/" },
-  { name: "boysepisoderecap", link: "boysepisoderecap/" }
+  { name: "boysepisoderecap", link: "boysepisoderecap/" },
+  { name: "wonderlandvrhorror", link: "wonderlandvrhorror/" },
+  { name: "helloneighbor", link: "helloneighbor/" }
 ];
 
 items.forEach(item => {
