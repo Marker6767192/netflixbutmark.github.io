@@ -1,7 +1,8 @@
 const grid = document.getElementById("grid");
 
 const items = [
-  { name: "doors", link: "doors/" }
+  { name: "doors", link: "doors/" },
+  { name: "boysepisoderecap", link: "boysepisoderecap/" }
 ];
 
 items.forEach(item => {
